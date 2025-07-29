@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesture Arena</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="light">
+  <main>
+    <label class="switch audio-switch" title="Toggle background music">
+      <input type="checkbox" id="audio-toggle" checked />
+      <span class="slider speaker">
+        <span class="icon-wrapper">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </span>
+      </span>
+    </label>
+
+    <label class="switch theme-switch" title="Toggle dark/light theme">
+      <input type="checkbox" id="theme-toggle" />
+      <span class="slider moon">
+        <span class="crater"></span>
+        <span class="crater"></span>
+      </span>
+    </label>
+
+    <header class="header">
+      <h1 class="title">Gesture Arena</h1>
+      <h2 class="subtitle" id="game-state">Let's Play!</h2>
+    </header>
+
+    <section class="result-box">
+      <span class="choice player" aria-label="Player choice">✊</span>
+      <span class="versus">VS</span>
+      <span class="choice cpu" aria-label="Computer choice">✊</span>
+    </section>
+
+    <section class="score">
+      <h4>Won <span class="won" id="won">0</span></h4>
+      <span class="divider"></span>
+      <h4>Draw <span class="draw" id="draw">0</span></h4>
+      <span class="divider"></span>
+      <h4>Lost <span class="lost" id="lost">0</span></h4>
+    </section>
+
+    <section class="choices">
+      <div class="choice-wrap">
+        <button class="choice-btn" value="rock" aria-label="Rock">✊</button>
+        <p class="choice-label">Rock</p>
+      </div>
+      <div class="choice-wrap">
+        <button class="choice-btn" value="paper" aria-label="Paper">🖐️</button>
+        <p class="choice-label">Paper</p>
+      </div>
+      <div class="choice-wrap">
+        <button class="choice-btn" value="scissors" aria-label="Scissors">✌️</button>
+        <p class="choice-label">Scissors</p>
+      </div>
+    </section>
+
+    <button class="reset" id="reset-btn" aria-label="Reset game">Restart</button>
+  </main>
+
+  <audio id="bg-music" loop preload="none">
+    <source src="bg-music.mp3" type="audio/mpeg" />
+    <source src="bg-music.ogg" type="audio/ogg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
